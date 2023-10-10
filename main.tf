@@ -46,7 +46,3 @@ resource "aws_security_group" "sai_security" {
     Name = "sai_security"
   }
 }
-resource "aws_ec2_instance_state" "example" {
-  instance_id = aws_instance.example.id
-  state       = "stopped"
-}
