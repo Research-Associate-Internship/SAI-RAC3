@@ -13,7 +13,8 @@ provider "aws" {
 }
 resource "aws_instance" "example" {
   ami="ami-0aec300fa613b1c92"
-  instance_type= "t2.micro"
+  instance_type= "t2.micro" 
+  security_groups=[aws_security_group.sai_security.name]
   tags={
       Name= "Sai-Server1"
   }
