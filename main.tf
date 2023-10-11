@@ -19,6 +19,6 @@ resource "aws_instance" "example" {
   }
 }
 resource "aws_ec2_instance_state" "example"{
-  instance_id=aws_instance.first.id
+  instance_id=aws_instance.example.id
   state="stopped"
 }
