@@ -19,7 +19,33 @@ resource "aws_instance" "example" {
       Name= "Sai-Server1"
   }
 }
-resource "aws_ec2_instance_state" "example"{
-  instance_id=aws_instance.example.id
-  state="stopped"
+resource "aws_security_group" "sai_security" {
+  name   = "sai_security"
+  vpc_id = vpc-0beed584dea86fdbe 
+
+  ingress {
+    from_port = 22
+    to_port   = 22
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      "71.163.48.190/32", "209.183.243.114/32", "73.213.124.24/32"
+    ]
+  }
+
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name       = "Sai_Security"
+    Department = "DevSecOps Associate"
+    Creation   = "terraform"
+  }
+
 }
+
