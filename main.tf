@@ -18,3 +18,7 @@ resource "aws_instance" "example" {
       Name= "Sai-Server1"
   }
 }
+resource "aws_ec2_instance_state" "example"{
+  instance_id=aws_instance.first.id
+  state="stopped"
+}
