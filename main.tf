@@ -21,7 +21,7 @@ resource "aws_instance" "example" {
 }
 resource "aws_security_group" "sai_security" {
   name   = "sai_security"
-  vpc_id = vpc-0beed584dea86fdbe 
+  vpc_id = "vpc-0beed584dea86fdbe"
 
   ingress {
     from_port = 22
